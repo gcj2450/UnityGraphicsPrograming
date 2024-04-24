@@ -15,3 +15,6 @@ http://sugi.cc/post/56805919861/vertex-shader
 
 Meshをつくるサンプルプログラムと、
 バーテックスシェーダの、例です。
+https://github.com/gcj2450/UnityGraphicsPrograming/blob/master/Tree.png
+[https://github.com/gcj2450/UnityGraphicsPrograming/blob/master/Tree.png](https://github.com/gcj2450/UnityGraphicsPrograming/blob/master/SplineMesh.png)
+https://github.com/gcj2450/UnityGraphicsPrograming/blob/master/Loftmesh.png
