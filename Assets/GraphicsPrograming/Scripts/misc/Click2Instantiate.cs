@@ -9,7 +9,7 @@ public class Click2Instantiate : MonoBehaviour {
 		if(!Input.GetMouseButtonUp(0))
 			return;
 		
-		Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+		Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit)){
 			GameObject go = (GameObject)Instantiate(o, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));

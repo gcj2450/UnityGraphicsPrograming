@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 Shader "Custom/Fire" {
 	  Properties {
 		_C1 ("color1", Color) = (0,0,0,1)
@@ -36,7 +38,7 @@ Shader "Custom/Fire" {
 			float fire = saturate(_DT);
 			
 			float3 pos = v.vertex.xyz;
-			float3 wPos = mul(_Object2World, v.vertex).xyz;
+			float3 wPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 			float y = pos.y + 0.5;
 			pos.y += y*y;
 			float3 tmp = pos;

@@ -17,13 +17,13 @@ public class DrawMesh : MonoBehaviour {
 			GetComponent<MeshFilter>().mesh = sweep.mesh;
 		}
 		if(!Input.GetMouseButtonDown(0) && !Input.GetMouseButton(0) && !Input.GetMouseButtonUp(0)){
-			Camera.mainCamera.transform.RotateAround(sweep.drawPoint, Vector3.up, Time.deltaTime * 10f);
+			Camera.main.transform.RotateAround(sweep.drawPoint, Vector3.up, Time.deltaTime * 10f);
 			return;
 		}
 		
 		Vector3 pos = Input.mousePosition;
 		pos.z = 50f-Mathf.Sin(Time.time)*20f;
-		pos = Camera.mainCamera.ScreenToWorldPoint(pos);
+		pos = Camera.main.ScreenToWorldPoint(pos);
 		sweep.scale = Mathf.Sqrt(1f/(sweep.drawPoint - pos).magnitude);
 		if(sweep.Draw(pos, Input.GetMouseButtonDown(0), Input.GetMouseButtonUp(0)))
 			sweep.UpdateMesh();

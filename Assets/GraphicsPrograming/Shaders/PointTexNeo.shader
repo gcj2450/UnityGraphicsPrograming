@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/PointTex" {
 
     Properties {
@@ -69,7 +71,7 @@ Shader "Custom/PointTex" {
 				pos1.w = 1;
 				
 				v.vertex = _T*pos1 + (1-_T)*v.vertex;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				
 				o.color = v.color;
 				o.uv = TRANSFORM_TEX(v.texcoord,_MainTex);

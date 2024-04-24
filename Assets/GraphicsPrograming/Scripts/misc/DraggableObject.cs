@@ -8,7 +8,7 @@ public class DraggableObject : MonoBehaviour
 	void OnMouseDown ()
 	{
 		moving = true;
-		distance = Vector3.Distance(Camera.mainCamera.transform.position, transform.position);
+		distance = Vector3.Distance(Camera.main.transform.position, transform.position);
 	}
  
 	void OnMouseDrag ()
@@ -17,7 +17,7 @@ public class DraggableObject : MonoBehaviour
 			return;
 		Vector3 pos = Input.mousePosition;
 		pos.z = distance;
-		transform.position = Camera.mainCamera.ScreenToWorldPoint(pos);
+		transform.position = Camera.main.ScreenToWorldPoint(pos);
 	}
 	
 	void OnMouseUp(){

@@ -26,7 +26,7 @@ public class Click2Mesh : MonoBehaviour {
 		if(Input.GetMouseButtonUp(0) && !drag){
 			Vector3 pos = Input.mousePosition;
 			pos.z = 50f;
-			pos = camera.ScreenToWorldPoint(pos);
+			pos = GetComponent<Camera>().ScreenToWorldPoint(pos);
 			
 			GameObject.CreatePrimitive(PrimitiveType.Sphere).transform.position = pos;
 			
